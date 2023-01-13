@@ -19,13 +19,13 @@ Sachez que dans le deux cas pour utiliser mocha il faut avoir un dossier `test` 
 Mocha nous offre différentes manière d’écrire notre code, donc vous pouvez tester en suivant le
 - `BDD`(**Behavior Driven Development**) : c-à-d où on va décrire des étapes et ensuite ce que ces étapes sont censés faire
 - `TDD`(**Test Driven Development**) : Où on va plutot ecrite des suites des tests
-- ...
+- …
 
-### Ecrivons nos premiers Test avec Mocha
+### Écrivons nos premiers Test avec Mocha
 
-Pour ecrire un est il faut d'abord lui donner un nom, et pour ça on utilise la fonction `describe()` et cette methode prend en paramètre le nom du test et en second paramètre un `callback` qui faira ensuite different TEST.
-Dans nos test on va ensuite avoir des etapes et chaque etapes va consister à tester des fonctionnalités de notre application.
-Lorsque l'on ecrit un Test on ecrit la methode `it()` cette methode `it` prend en premier paramètre la description du test en  second paramètre un callback qui va contenir le test que l'on souhaite effectuer.
+Pour écrire un test, il faut d’abord lui donner un nom, et pour ça on utilise la fonction `describe()` et cette méthode prend en paramètre le nom du test et en second paramètre un `callback` qui faira ensuite différent TEST.
+Dans nos tests on va ensuite avoir des étapes et chaque étape va consister à tester des fonctionnalités de notre application.
+Lorsque l’on écrit un Test on écrit avec la méthode `it()` cette méthode `it` permet d’écrire le scenario d’un Test et il prend en premier paramètre la description du test en second paramètre un callback qui va contenir le test que l’on souhaite effectuer.
 
 ```{JS}
 describe("Test something", () => {
@@ -35,7 +35,7 @@ describe("Test something", () => {
 });
 ```
 
-Comme on l'a dit ci-haut, mocha vient avec absolument rien, et on a pas des framework pour gerer par exemple les assertions, du coup pour gerer les assertions(Une assertion c'est ce qui permet de tester q'un valeur correspond bien à ce que l'on attend) on va utiliser la librairie interne de node.js `assert` en l'important d'abord avec un `import assert from 'node:assert'`.
+Comme on l’a dit ci-haut, mocha vient avec absolument rien, et on a pas des framework pour gerer par exemple les assertions, du coup pour gerer les assertions(Une assertion c’est ce qui permet de tester q’un valeur correspond bien à ce que l’on attend) on va utiliser la librairie interne de node.js `assert` en l’important d’abord avec un `import assert from 'node:assert'`.
 
 ```{TS}
 import assert from "node:assert";
