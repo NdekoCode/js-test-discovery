@@ -52,3 +52,22 @@ describe("Test something", () => {
 });
 
 ```
+
+### Les commandes mocha
+
+- Pour commencer on a les **reporters** :
+
+Par default mocha nous affiche nos test sous format `spec`, il correspond à ce que l'on fait, il a l'avantage de presenter les informations de manière relativement correcte et simplifier mais on a d'autres possibilités telle que la version `dot` qui nous affiche des petit points qui sont blanche si jamais ça fonctionne bien et rouge si jamais vous avez fait des erreurs.
+Si vous voulez changer de `reporter` il faut utiliser la commande `mocha` avec l'argument `--reporter` ou `-R` suivis du nom du reporter que vous voulez supporter donc `mocha --reporter dot` ou `mocha -R nameOfOption`
+Parmis les options les plus recommander sont:
+
+- `mocha -R dot` : va afficher juste des point
+- `mocha -R nyan` : va afficher un chat
+- `mocha -R landing` : va afficher un avion
+- `mocha -R list` : va afficher une liste (A recommader si on veut une visibilité sous forme de liste)
+-
+
+On a aussi d'autres options dans la commande qui sont plutot utiles, parmis eux on a:
+
+- `--bail ou -b` qui permet de vous dire `"Vous vous arreter si jamais vous rencontrez une erreur"`, si il y en a une foire alor il s'arrete et ne fait pas les autres tests.
+- `--grep LeNomDuDescript`: permet de specifier le test que l'on veut lancer et ignorer les autres, par exemple `mocha --grep Percentage` il va lancer uniquement les test qui contiennent la clé `"Pourcentage"` comme `'describe'` mais vous pouvez aussi faire cet option coté code avec it.only("Le nom du test a executer", leCallback)
