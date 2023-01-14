@@ -17,8 +17,11 @@ describe("Pourcentage", () => {
     });
   });
   describe("#Evolution is Infinit", () => {
-    it("It should giv us Infinity", () => {
+    it("Should giv us Infinity", () => {
       equal(Percentage.evolution(0, 100), Infinity);
+    });
+    it("Should round value", () => {
+      equal(Percentage.evolution(30, 100), 233.33);
     });
   });
 });

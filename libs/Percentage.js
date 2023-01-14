@@ -1,12 +1,14 @@
 const Percentage = {
-  evolution: (a, b) => {
+  evolution: function (a, b) {
     if (a === 0) {
       return Infinity;
     }
-    const perc = parseInt((100 * (b - a)) / a);
-    // console.log(perc);
+    const perc = this.round((b - a) / a);
     return perc;
   },
+  round: function (value) {
+    return Math.round(10000 * value) / 100;
+  }
 };
 
 export default Percentage;
