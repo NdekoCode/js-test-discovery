@@ -18,14 +18,19 @@ Pour installer mocha, on peut le faire de deux manières :
 Sachez que dans le deux cas pour utiliser mocha il faut avoir un dossier `test` à la racine de l’arborescence de votre projet, car c’est dans ce dossier qu’il va chercher les fichiers JavaScript à tester et ce fichier doivent avec une extension `.spec.js` ou `.test.js` pour être reconnus facilement par Mocha.
 Mocha nous offre différentes manière d’écrire notre code, donc vous pouvez tester en suivant le
 - `BDD`(**Behavior Driven Development**) : c-à-d où on va décrire des étapes et ensuite ce que ces étapes sont censés faire
-- `TDD`(**Test Driven Development**) : Où on va plutot ecrite des suites des tests
+- `TDD`(**Test Driven Development**) : Où on va plutôt écrite des suites des tests
 - …
 
 ### Écrivons nos premiers Test avec Mocha
 
+### DBB
+
+Dans nos tests on va avoir des étapes, chaque étape va consister à tester une fonctionnalité de notre application ou de notre librairie.
+Lorsque l'on fait des tests unitaires, l'intérêt, c'est vraiment de commencer à écrire les tests puis commencer à écrire l'application qui fonctionne autour.
 Pour écrire un test, il faut d’abord lui donner un nom, et pour ça on utilise la fonction `describe()` et cette méthode prend en paramètre le nom du test et en second paramètre un `callback` qui faira ensuite différent TEST.
 Dans nos tests on va ensuite avoir des étapes et chaque étape va consister à tester des fonctionnalités de notre application.
 Lorsque l’on écrit un Test on écrit avec la méthode `it()` cette méthode `it` permet d’écrire le scenario d’un Test et il prend en premier paramètre la description du test en second paramètre un callback qui va contenir le test que l’on souhaite effectuer.
+Quand on fait du `BDD` souvent le mot clé `"Should"` et quand on le lit grâce à la méthode it, ça fait `"It should do something..."`
 
 ```{JS}
 describe("Test something", () => {
@@ -35,7 +40,7 @@ describe("Test something", () => {
 });
 ```
 
-Comme on l’a dit ci-haut, mocha vient avec absolument rien, et on a pas des framework pour gerer par exemple les assertions, du coup pour gerer les assertions(Une assertion c’est ce qui permet de tester q’un valeur correspond bien à ce que l’on attend) on va utiliser la librairie interne de node.js `assert` en l’important d’abord avec un `import assert from 'node:assert'`.
+Comme on l’a dit ci-haut, mocha vient avec absolument rien, et on n'a pas des frameworks pour gérer par exemple les assertions, du coup pour gérer les assertions(Une assertion, c’est ce qui permet de tester qu’une valeur correspond bien à ce que l’on attend) on va utiliser la librairie interne de node.js `assert` en l’important d’abord avec un `import assert from 'node:assert'`.
 
 ```{TS}
 import assert from "node:assert";

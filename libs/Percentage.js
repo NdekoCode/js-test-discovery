@@ -1,6 +1,9 @@
 const Percentage = {
   evolution: (a, b) => {
-    const perc = parseInt((a / b) * 100);
+    if (a === 0) {
+      return Infinity;
+    }
+    const perc = parseInt((100 * (b - a)) / a);
     // console.log(perc);
     return perc;
   },
