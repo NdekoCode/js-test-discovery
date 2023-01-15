@@ -71,3 +71,16 @@ On a aussi d'autres options dans la commande qui sont plutot utiles, parmis eux 
 
 - `--bail ou -b` qui permet de vous dire `"Vous vous arreter si jamais vous rencontrez une erreur"`, si il y en a une foire alor il s'arrete et ne fait pas les autres tests.
 - `--grep LeNomDuDescript`: permet de specifier le test que l'on veut lancer et ignorer les autres, par exemple `mocha --grep Percentage` il va lancer uniquement les test qui contiennent la clé `"Pourcentage"` comme `'describe'` mais vous pouvez aussi faire cet option coté code avec it.only("Le nom du test a executer", leCallback)
+
+### Test du code Asynchrone avec Mocha & before/after
+
+Lorsque vous souhaiter attendre dans vos tests, surtout quand il y a un timer ou une fonction callback ou encore du code asynchrone, vous devez passer à la fonction de `it` un parametre `done` et l'appeler à la fin du test.
+
+```{JS}
+ it("Should wait 300 ms", (done) => {
+        Percentage.wait(300, (test) => {
+            equal(test, 18, "Must be 18");
+        });
+        done();
+    })
+```
