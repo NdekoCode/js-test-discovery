@@ -80,7 +80,19 @@ Lorsque vous souhaiter attendre dans vos tests, surtout quand il y a un timer ou
  it("Should wait 300 ms", (done) => {
         Percentage.wait(300, (test) => {
             equal(test, 18, "Must be 18");
+            done(); // La fin du test pour dire "Ici la fin du test asynchrone"
         });
-        done();
     })
 ```
+
+ `before` et `after` son utiliser pour la description de nos taches,
+
+- Le `before` : permet d'indiquer une fonction à exécuter avant de lancement de tous ces tests qui suit sa declaration, cela est pratique si vous voulez mettre en place un environnement avant que votre test soit exécuter
+- Le `after` : permet d'indiquer une fonction à exécuter après tous les test qui le suivent
+- Le `beforeEach` : permet d'indiquer une fonction qui sera exécuter entre chaque Test
+- Le `afterEach` : permet d'indiquer une fonction qui sera exécuter après chaque Test
+
+**NB** : Tout ce que vous faites dans un `beforeEach` pensait à le defaire dans un `afterEach` pour que le Test suivant puisse partir sur des nouvelles bases saines et que vous n'ayez pas des Tests qui s'entrechoquent.
+
+- On a aussi la possibilité de créer du test que vous allez exécuter plus tard, on dit que ces test sont en statut `pending` càd que ces tests sont en status d'écriture et pour le faire on fait juste un en `it` sans lui passer de callback càd `it("La description du test à mettre en attente")`.
+- Si jamais vous avez un test qui se met à echouer et que vous n'arrivez pas à corriger le probleme ou que vous le corrigerai plus tard mais que vous ne voulez pas faire appaitre le test comme etant echouant vous pouvez utiliser la methode `skip` sur l'objet `it` et cela va permettre de mettre le test en `pending` càd mettre le test en attente et donc `it.skipt("Le test qui a echouer et que l'on veut mettre en pending",SonCallback)`, si vous mettez la methode `skip` sur une fonction `describe` alors tous les test se trouvant à l'interieur seront mis en pending.

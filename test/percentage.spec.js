@@ -20,14 +20,16 @@ describe("Pourcentage", () => {
         equal(Percentage.evolution(100, 50), -50, "Devrait renvoyer -50");
       });
     });
-    describe("#Evolution is Infinit", () => {
-      it("Should giv us Infinity", () => {
+    describe.skip("#Evolution is Infinit", () => {
+      it.skip("Should giv us Infinity, we use skip method", () => {
         equal(Percentage.evolution(0, 100), Infinity);
       });
       it("Should round value", () => {
         equal(Percentage.evolution(30, 100), 233.33);
       });
     });
+
+    it("It should give me a indeterminate")
   })
 
 });

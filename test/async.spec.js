@@ -9,9 +9,8 @@ describe("#Asynchronous Wait", () => {
     })
     it("Should wait 300 ms", (done) => {
         Percentage.wait(300, (test) => {
-
-            done();
             equal(test, 18, "Must be 18");
+            done();
         });
     })
 })
