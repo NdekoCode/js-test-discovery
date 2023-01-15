@@ -1,5 +1,6 @@
 import {
   assert,
+  expect,
   should
 } from "chai";
 import Percentage from "../libs/Percentage.js";
@@ -14,17 +15,17 @@ describe("Pourcentage", () => {
     });
     describe("#Evolution of 50", () => {
       it("It should give an #evolution of 50", () => {
-        Percentage.evolution(100, 150).should.be.equal(50, "Devrait renvoyer 50")
+        expect(Percentage.evolution(100, 150)).be.equal(50, "Devrait renvoyer 50")
       });
     });
     describe("#Evolution of -50", () => {
       it("It should give an #evolution of -50", () => {
-        Percentage.evolution(100, 50).should.be.equal(-50, "Devrait renvoyer -50")
+        expect(Percentage.evolution(100, 50)).be.equal(-50, "Devrait renvoyer -50")
       });
     });
     describe.skip("#Evolution is Infinit", () => {
       it.skip("Should giv us Infinity, we use skip method", () => {
-        assert.equal(Percentage.evolution(0, 100), Infinity);
+        expect(Percentage.evolution(0, 100)).be.equal(Infinity);
       });
       it("Should round value", () => {
         assert.equal(Percentage.evolution(30, 100), 233.33);

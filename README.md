@@ -109,6 +109,52 @@ Au niveau de l'inclusion cela va etre different suivant le type d'assertion que 
   - `assert.isTrue()` : qui permet de tester si l'assertion est un booléen `true`
   - `asset.isFunction()` : Permet de tester si la valeur passer est vraiment une fonction
 - `should` : le `should` est un peu particulier, car nous devons l'importer puis l'exécuter.
-
 `Should` est un peu particulier, car il va modifier vos objets càd, à son appel ou son exécution, tous vos objets contiennent maintenant une méthode `should` et vous pouvez ensuite l'utilisez pour tester differentes choses, sachez que l'assertion `should` est utiliser dans le `BDD` **Behavior Driven Development**
+
+```{JS}
+//FILE: percentage.spec.js
+import {
+  should
+} from "chai";
+import Percentage from "../libs/Percentage.js";
+should();
+
+
+    describe("#Evolution of 100", () => {
+      it("It should give an evolution of 100", () => {
+        Percentage.evolution(100, 200).should.be.equal(100, "Devrait renvoyer 100");
+      });
+    });
+    describe("#Evolution of 50", () => {
+      it("It should give an #evolution of 50", () => {
+        Percentage.evolution(100, 150).should.be.equal(50, "Devrait renvoyer 50")
+      });
+    });
+    describe("#Evolution of -50", () => {
+      it("It should give an #evolution of -50", () => {
+        Percentage.evolution(100, 50).should.be.equal(-50, "Devrait renvoyer -50")
+      });
+    });
+```
+
 Il ne faut pas trop utiliser should sur les objets qui ne sont pas de javascript comme `undefined`, `null`.
+
+- On a aussi l'assertion `expect` qui est plus recommander que `should`, pour l'utiliser c'est un peu comme `should` sauf que lui il entoure l'assertion qu'il veut tester comme suit:
+
+```{JS}
+//FILE: percentage.spec.js
+import {
+  expect
+} from "chai";
+import Percentage from "../libs/Percentage.js";
+ describe("#Evolution of 50", () => {
+      it("It should give an #evolution of 50", () => {
+        expect(Percentage.evolution(100, 150)).be.equal(50, "Devrait renvoyer 50")
+      });
+    });
+    describe("#Evolution of -50", () => {
+      it("It should give an #evolution of -50", () => {
+        expect(Percentage.evolution(100, 50)).be.equal(-50, "Devrait renvoyer -50")
+      });
+    });
+```
