@@ -96,3 +96,16 @@ Lorsque vous souhaiter attendre dans vos tests, surtout quand il y a un timer ou
 
 - On a aussi la possibilité de créer du test que vous allez exécuter plus tard, on dit que ces test sont en statut `pending` càd que ces tests sont en status d'écriture et pour le faire on fait juste un en `it` sans lui passer de callback càd `it("La description du test à mettre en attente")`.
 - Si jamais vous avez un test qui se met à echouer et que vous n'arrivez pas à corriger le probleme ou que vous le corrigerai plus tard mais que vous ne voulez pas faire appaitre le test comme etant echouant vous pouvez utiliser la methode `skip` sur l'objet `it` et cela va permettre de mettre le test en `pending` càd mettre le test en attente et donc `it.skipt("Le test qui a echouer et que l'on veut mettre en pending",SonCallback)`, si vous mettez la methode `skip` sur une fonction `describe` alors tous les test se trouvant à l'interieur seront mis en pending.
+
+### Les assertions avec Chai
+
+Chai c'est une librairie pour gerer les assertions, le but d'une assertion c'est de tester si une valeur est bien egale à une autre ou correspond à une situation donner.
+Le assert de node.js est plutot pratique mais il est relativement limiter lorsqu'il s'agit de tester des choses complexes.
+Chai permet de faire de test BDD et TDD et comme Mocha elle propose differente Approche.
+Pour l'installer c'est simple avec un `pnpm install -D chai`.
+Au niveau de l'inclusion cela va etre different suivant le type d'assertion que l'on veut faire.
+
+- Le premier type d'assert clest le `assert` qui ressemble beaucoup à l'`assert` de node.js tout simplement parce que la partie `assert` de chai est basé sur celui de node.js en ajoutant differente chose supplementaire comme
+  - `assert.isTrue()` : qui permet de tester si l'assertion est un booleen `true`
+  - `asset.isFunction()` : Permet de tester si la valeur passer est vraiment une fonction
+- `should` : le should est un peu particuler car nous devons l'importer puis l'executer.

@@ -1,15 +1,14 @@
 import {
-    equal,
-    notEqual
-} from "node:assert";
+    assert
+} from "chai";
 import Percentage from "../libs/Percentage.js";
 describe("#Asynchronous Wait", () => {
     it("Should exist", () => {
-        notEqual(Percentage.wait, undefined);
+        assert.isFunction(Percentage.wait);
     })
     it("Should wait 300 ms", (done) => {
         Percentage.wait(300, (test) => {
-            equal(test, 18, "Must be 18");
+            assert.equal(test, 18, "Must be 18");
             done();
         });
     })

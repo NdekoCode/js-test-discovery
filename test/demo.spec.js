@@ -1,4 +1,7 @@
-import assert from "node:assert";
+// import assert from "node:assert";
+import {
+  assert
+} from "chai";
 describe("Test something", () => {
   it("Should do something", () => {
     const a = 2;
