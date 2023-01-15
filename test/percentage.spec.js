@@ -1,25 +1,25 @@
 import {
-
-  should as assert
+  assert,
+  should
 } from "chai";
 import Percentage from "../libs/Percentage.js";
-assert();
+should();
 describe("Pourcentage", () => {
   describe("#Evolution", () => {
 
     describe("#Evolution of 100", () => {
       it("It should give an evolution of 100", () => {
-        assert.equal(Percentage.evolution(100, 200), 100, "Devrait renvoyer 100");
+        Percentage.evolution(100, 200).should.be.equal(100, "Devrait renvoyer 100");
       });
     });
     describe("#Evolution of 50", () => {
       it("It should give an #evolution of 50", () => {
-        assert.equal(Percentage.evolution(100, 150), 50, "Devrait renvoyer 50");
+        Percentage.evolution(100, 150).should.be.equal(50, "Devrait renvoyer 50")
       });
     });
     describe("#Evolution of -50", () => {
       it("It should give an #evolution of -50", () => {
-        assert.equal(Percentage.evolution(100, 50), -50, "Devrait renvoyer -50");
+        Percentage.evolution(100, 50).should.be.equal(-50, "Devrait renvoyer -50")
       });
     });
     describe.skip("#Evolution is Infinit", () => {

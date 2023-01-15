@@ -105,7 +105,10 @@ Chai permet de faire de test BDD et TDD et comme Mocha elle propose differente A
 Pour l'installer c'est simple avec un `pnpm install -D chai`.
 Au niveau de l'inclusion cela va etre different suivant le type d'assertion que l'on veut faire.
 
-- Le premier type d'assert clest le `assert` qui ressemble beaucoup à l'`assert` de node.js tout simplement parce que la partie `assert` de chai est basé sur celui de node.js en ajoutant differente chose supplementaire comme
-  - `assert.isTrue()` : qui permet de tester si l'assertion est un booleen `true`
+- Le premier type d'`assert` est le `assert` qui ressemble beaucoup à l'`assert` de node.js tout simplement parce que la partie `assert` de chai est basé sur celui de node.js en ajoutant différente chose supplémentaire comme
+  - `assert.isTrue()` : qui permet de tester si l'assertion est un booléen `true`
   - `asset.isFunction()` : Permet de tester si la valeur passer est vraiment une fonction
-- `should` : le should est un peu particuler car nous devons l'importer puis l'executer.
+- `should` : le `should` est un peu particulier, car nous devons l'importer puis l'exécuter.
+
+`Should` est un peu particulier, car il va modifier vos objets càd, à son appel ou son exécution, tous vos objets contiennent maintenant une méthode `should` et vous pouvez ensuite l'utilisez pour tester differentes choses, sachez que l'assertion `should` est utiliser dans le `BDD` **Behavior Driven Development**
+Il ne faut pas trop utiliser should sur les objets qui ne sont pas de javascript comme `undefined`, `null`.
