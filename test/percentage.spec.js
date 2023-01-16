@@ -15,12 +15,12 @@ describe("Pourcentage", () => {
     });
     describe("#Evolution of 50", () => {
       it("It should give an #evolution of 50", () => {
-        expect(Percentage.evolution(100, 150)).be.equal(50, "Devrait renvoyer 50")
+        expect(Percentage.evolution(100, 150)).equal(50, "Devrait renvoyer 50")
       });
     });
     describe("#Evolution of -50", () => {
       it("It should give an #evolution of -50", () => {
-        expect(Percentage.evolution(100, 50)).be.equal(-50, "Devrait renvoyer -50")
+        expect(Percentage.evolution(100, 50)).equal(-50, "Devrait renvoyer -50")
       });
     });
     describe.skip("#Evolution is Infinit", () => {

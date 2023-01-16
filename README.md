@@ -158,3 +158,11 @@ import Percentage from "../libs/Percentage.js";
       });
     });
 ```
+
+L'assertion `expect` veut dire en francais lors des test `"Je m'attend à ce que... point be... function...soit value ou"`
+`expect(Percentage.evolution(100, 50)).to.be.equal(-50, "Devrait renvoyer -50")` : Je m'attend à ce que pourcentage point évolution doit égale à -50
+Sachez que le `.to.be.` n'est pas obligatoire, il est là juste pour que ça soit plus facile et plus lisible et donc `expect(Percentage.evolution(100, 150)).to.be.equal(50, "Devrait renvoyer 50")` equivaut à `expect(Percentage.evolution(100, 150)).equal(50, "Devrait renvoyer 50")`
+
+### Sinon.js
+
+Sinon.js va nous permettre de créer des fonctions et de créer des espion, des mock et des Stub.
