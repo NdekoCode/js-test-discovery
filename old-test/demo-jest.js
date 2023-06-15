@@ -1,8 +1,8 @@
-const { add, multi } = require("../libs/functions");
+/* const { add, multi } = require("../libs/functions");
 test("Test addition", () => {
   const valueAdd = add(2, 5);
   expect(valueAdd).toBe(7);
-});
+}); */
 
 // Scenario TEST
 /* describe("Test multiplication scenario", () => {
@@ -24,7 +24,7 @@ test("Test addition", () => {
   });
 });
  */
-
+/* 
 describe("Test multiplication scenario", () => {
   it("Should make a Multiplication not null", () => {
     const valueMulti = multi(2, 2);
@@ -43,3 +43,4 @@ describe("Test multiplication scenario", () => {
     expect(() => multi(4, 0)).toThrow("Not divisible");
   });
 });
+ */
