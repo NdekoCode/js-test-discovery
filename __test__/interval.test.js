@@ -1,4 +1,4 @@
-const { intervalToObj } = require("../libs/interval");
+const { intervalToObj, refactorIntervalObj } = require("../libs/interval");
 describe("Timer", () => {
   it("Should return an object for 0 second", () => {
     const o = intervalToObj(0);
@@ -20,7 +20,7 @@ describe("Timer", () => {
   });
 
   it("Should handle minutes", () => {
-    const o = intervalToObj(3 * 60 * 1000 + 15 * 1025);
+    const o = refactorIntervalObj(3 * 60 * 1000 + 15 * 1025);
     expect(o).toStrictEqual({
       days: 0,
       hours: 0,
@@ -29,7 +29,7 @@ describe("Timer", () => {
     });
   });
   it("Should return one handle minute", () => {
-    const o = intervalToObj(60000);
+    const o = refactorIntervalObj(60000);
     expect(o).toStrictEqual({
       days: 0,
       hours: 0,
@@ -39,7 +39,7 @@ describe("Timer", () => {
   });
 
   it("Should handle an hour", () => {
-    const o = intervalToObj(
+    const o = refactorIntervalObj(
       12 * 60 * 60 * 1000 + 7 * 60 * 1000 + 5 * 1075 + 500
     );
     expect(o).toStrictEqual({
@@ -50,7 +50,7 @@ describe("Timer", () => {
     });
   });
   it("Should handle an hour", () => {
-    const o = intervalToObj(
+    const o = refactorIntervalObj(
       5 * 24 * 60 * 60 * 1000 +
         12 * 60 * 60 * 1000 +
         32 * 60 * 1000 +
