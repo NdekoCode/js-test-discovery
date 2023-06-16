@@ -37,4 +37,31 @@ describe("Timer", () => {
       seconds: 0,
     });
   });
+
+  it("Should handle an hour", () => {
+    const o = intervalToObj(
+      12 * 60 * 60 * 1000 + 7 * 60 * 1000 + 5 * 1075 + 500
+    );
+    expect(o).toStrictEqual({
+      days: 0,
+      hours: 12,
+      minutes: 7,
+      seconds: 6,
+    });
+  });
+  it("Should handle an hour", () => {
+    const o = intervalToObj(
+      5 * 24 * 60 * 60 * 1000 +
+        12 * 60 * 60 * 1000 +
+        32 * 60 * 1000 +
+        8 * 1075 +
+        500
+    );
+    expect(o).toStrictEqual({
+      days: 5,
+      hours: 12,
+      minutes: 32,
+      seconds: 9,
+    });
+  });
 });
