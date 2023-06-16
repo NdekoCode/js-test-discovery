@@ -5,7 +5,9 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "test:watch":"jest --watch",
+    "test:cov": "jest --coverage"
   },
   "keywords": [],
   "author": "",
